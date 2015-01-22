@@ -60,9 +60,27 @@ HANGMANPICS = ['''
       |
 *========*''']
 
+def calcPoint(record):
+    record += 10
+    return record
+
 def readWordList():
     file = open('text.txt', 'r')
     return file.readline().split()
+
+def readRecord():
+    file = open('record.txt', 'r')
+
+    list=file.readline().split()
+    if(len(list) == 0):
+        return ['none', 0]
+    else:
+        return list
+
+def writeRecord(name, record):
+    file = open('record.txt', 'w')
+    file.write(name+" "+str(record))
+    file.close()
 
 words = readWordList()
 
@@ -128,7 +146,15 @@ def checkWrongAnswer(missedLetters, secretWord):
             
 def main():
     """Main application entry point."""
+
     print('H A N G M A N - DYSM')
+
+    name = readRecord()[0]
+    highRecord = int(readRecord()[1])
+
+    print('Highest Record is:', name + " - " + str(highRecord))
+
+    record = 0
     missedLetters = ''
     correctLetters = ''
     gameSucceeded = False
@@ -141,10 +167,12 @@ def main():
         if gameSucceeded or gameFailed:
             if gameSucceeded:
                 print('Yes! The secret word is "' + secretWord + '"! You have won!')
+                record = calcPoint(record)
             else:
                 print('You have run out of guesses!\nAfter ' + str(len(missedLetters)) + ' missed guesses and ' + str(len(correctLetters)) + ' correct guesses, the word was "' + secretWord + '"')
 
             # Ask the player if they want to play again (but only if the game is done).
+            print("Now score : ", record)
             if playAgain():
                 missedLetters = ''
                 correctLetters = ''
@@ -152,7 +180,9 @@ def main():
                 gameFailed = False
                 secretWord = getRandomWord(words)
                 continue 
-            else: 
+            else:
+                if(highRecord < record):
+                    writeRecord(input("NEW RECORD!!\nWhat's your name?: "), record)
                 break
 
         # Let the player type in a letter.
