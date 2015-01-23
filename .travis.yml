@@ -9,7 +9,7 @@ python:
 # - pip install python-coveralls
 
 script:
-- python3 ./uniTest2.py
+- python3 ./unitTest2.py
 ￼ ￼
 
 
