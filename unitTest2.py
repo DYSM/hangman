@@ -12,22 +12,17 @@ class hangmanTestCase(unittest.TestCase):
 
         self.assertTrue(answer)
 
-<<<<<<< HEAD
 
-=======
->>>>>>> FETCH_HEAD
     def test_CheckWrongAnswerFalse(self):
         answer = hangman.checkWrongAnswer('tac', 'cat')
         self.assertFalse(answer)
         self.assertEquals(answer,False)
-<<<<<<< HEAD
 
-=======
     def test_incorrect(self):
         answer=hangman.checkCorrectAnswer('ac','cat')
 
         self.assertEquals(answer,True)
->>>>>>> FETCH_HEAD
+
 
 
 if __name__ == '__main__':
