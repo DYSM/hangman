@@ -19,13 +19,12 @@ class hangmanTestCase(unittest.TestCase):
         answer = hangman.checkWrongAnswer('rioooi', 'ourt')
         self.assertTrue(answer)
 
-<<<<<<< Updated upstream
+
     def test_CheckWrongAnswerFalse(self):
         answer = hangman.checkWrongAnswer('tac', 'cat')
         self.assertFalse(answer)
-=======
         self.assertEquals(answer,False)
->>>>>>> Stashed changes
+
 
 
 if __name__ == '__main__':
