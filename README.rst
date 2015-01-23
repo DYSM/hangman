@@ -1,3 +1,3 @@
 # hangman
 
-• https://github.com/DYSM/hangman/edit/master/README.rst
+https://github.com/DYSM/hangman/edit/master/README.rst
