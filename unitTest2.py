@@ -21,7 +21,7 @@ class hangmanTestCase(unittest.TestCase):
     def test_incorrect(self):
         answer=hangman.checkCorrectAnswer('ac','cat')
 
-        self.assertEquals(answer,True)
+        self.assertEquals(answer,False)
 
 
 
