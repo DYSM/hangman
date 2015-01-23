@@ -1,12 +1,15 @@
-language: python
-python: 
- - "3.2"
- - "3.3"
- - "3.4"
+language: python python:
+- "3.2"
+- "3.3"
+- "3.4"
 
 # install: 
-# - pip install coverage
+# - pip install coverage 
 # - pip install python-coveralls
 
 script:
- - python3 ./unitTest2.py
+- python3 ./uniTest2.py
+￼ ￼
+
+
+
