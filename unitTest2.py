@@ -7,15 +7,21 @@ import hangman
 
 class hangmanTestCase(unittest.TestCase):
 
-    def test_correct(self):
+    def test_CheckCorrectAnswerTrue(self):
         answer=hangman.checkCorrectAnswer('tac','cat')
-
         self.assertTrue(answer)
 
-    def test_incorrect(self):
-        answer=hangman.checkCorrectAnswer('ac','cat')
+    def test_CheckCorrectAnswerFalse(self):
+        answer = hangman.checkCorrectAnswer('ito', 'cat')
+        self.assertFalse(answer)
 
-        self.assertEquals(answer,True)
+    def test_CheckWrongAnswerTrue(self):
+        answer = hangman.checkWrongAnswer('rioooi', 'ourt')
+        self.assertTrue(answer)
+
+    def test_CheckWrongAnswerFalse(self):
+        answer = hangman.checkWrongAnswer('tac', 'cat')
+        self.assertFalse(answer)
 
 
 if __name__ == '__main__':
